@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>aprendendo js</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+
+    <br>
+        <div>
+            <ul>
+                <li><a onclick="changeLayoutTo('red','white'); changeMsgTo('bg = Red; font = White')">Layout Red/White</a></li>
+                <li><a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a></li>
+                <li><a onclick="resetChange()">Default Layout</a></li>
+                <li><a onclick="getFirstCharOfTxt('n2')">Alert: 1ª letra do nome</a></li>
+            </ul>
+        </div>
+        <div>
+            <p id="demo"> Xablau </p>
+            <div id="txtManip">
+                <input type = "button" class="button" onclick="increaseFontSize('demo', 1)" value = "FontSize++ 1px"/>
+                <input type = "button" class="button" onclick="decreaseFontSize('demo', 2)" value = "FontSize-- 1px"/>
+                <input type = "button" class="button" onclick="decreaseFontSize('demo', 2)" value = "FontSize-- 2px"/>
+            </div>
+        </div>
+
+        <div id="inputs">
+            <div id="nome">
+                Nome:
+                <p>
+                    <input id="n1" name="nome" type="text" placeholder="nome"  size="30">
+                </p>
+            </div>
+
+            <div id="sobrenome">
+                Sobrenome:
+                <p>
+                    <input id="n2" name="sobrenome" type="text" placeholder="sobrenome" value="" size="30">
+                </p>
+            </div>
+
+            <div id="searchFor">
+                Procurar por:
+                <p>
+                    <input id="search" type="text" placeholder="texto que deseja procurar" value="" size="30">
+                    <input type = "button" onclick="searchForTxtIn('search','n1')" value="search">
+                </p>
+            </div>
+
+            <div>
+                Números:
+                <p>
+                    <input id="nums" name="numeros" type="text" placeholder="digite os números separados por vírgula" value="" size="40">
+                    <input type = "button" onclick="getMaxNumber('nums')" value="alert maior número">
+                </p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div>
+            <p> To do: colocar cada categoria lado a lado e num menu bonito feito por mim com base no tympanus.net.</p>
+            <p> JavaScript é Case Sensitive.</p>
+            <p> Estudar selectors(é importante).</p>
+            <p> Inicializa as variáveis com valor indefinido.</p>
+            <p> Exemplo de array: var carros = ["Saab", "Volvo", "BMW"]; </p>
+            <p> Exemplo de obj: var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}; </p>
+
+            <div id="txt">
+                <h1> Main text manipulation </h1>
+                <input type = "button" onclick="hideElement('demo')" value = "Hide txt"/>
+                <input type = "button" onclick="recoverElement('demo')" value = "Recover txt"/>
+            </div>
+
+            <div id="inputManipulation">
+                <h1> Text input manipulation </h1>
+                <input type = "button" onclick="alertValuesOf(n1,n2)" value = "alert input value"/>
+                <input type = "button" onclick="alertPersonInfo('n1','n2')" value = "alert obj person"/>
+                <input type = "button" onclick="clearInputs('n1')" value = "clear nome">
+                <input type = "button" onclick="clearInputs('n2')" value = "clear sobrenome">
+                <input type = "button" onclick="clearInputs('n1','n2')" value = "clear both">
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

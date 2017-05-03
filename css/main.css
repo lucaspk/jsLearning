@@ -10,6 +10,46 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+#n1 .button, #n2 .button{
+    background-color: deepskyblue;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+#n1 .button:hover, #n2 .button:hover{
+    background-color: white;
+    color: deepskyblue;
+    border: 2px solid deepskyblue;
+}
+
+#nums .button{
+    background-color: red;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+#nums .button:hover{
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+}
+
+#searchFor .button{
+    background-color: darkgreen;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+#searchFor .button:hover{
+    background-color: white;
+    color: darkgreen;
+    border: 2px solid darkgreen;
+}
+
+
 .button{
     background-color: gold;
     border: none;
@@ -92,7 +132,7 @@ li a {
 }
 
 li a:hover {
-    background-color: #111111;
+    background-color: orangered;
 }
 
 /*

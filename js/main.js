@@ -168,13 +168,18 @@ function getMaxNumber(inputID) {
     if(txt != null && txt != ""){
         var numbers = txt.split(",");
         var max = parseInt(numbers[0]);
-        for(var i = 1; i < numbers.length; i++){
-            var currentNumber = parseInt(numbers[i]);
-            if(currentNumber > max){
-                max = currentNumber;
-            }
+        if(isNaN(max)){
+            window.alert("Você não digitou um número!!!");
         }
-        window.alert("max:" + max);
+        else{
+            for(var i = 1; i < numbers.length; i++){
+                var currentNumber = parseInt(numbers[i]);
+                if(currentNumber > max){
+                    max = currentNumber;
+                }
+            }
+            window.alert("maior número digitado foi: " + max);
+        }
         elem.value = ""; /*assim que pegar os números, apaga eles do input, para o caso de querer digitar outros.*/
     }
     else{

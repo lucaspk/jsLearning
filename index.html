@@ -22,6 +22,7 @@
                 <li><a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a></li>
                 <li><a onclick="resetChange()">Default Layout</a></li>
                 <li><a onclick="getFirstCharOfTxt('n2')">Alert: 1ª letra do nome</a></li>
+                <li><a href="https://www.youtube.com/watch?v=7mJLmpuxzaQ" target="_blank">musica q tava procurando *-*</a></li>
             </ul>
         </div>
         <div>
@@ -34,33 +35,35 @@
         </div>
 
         <div id="inputs">
-            <div id="nome">
+            <div>
                 Nome:
-                <p>
-                    <input id="n1" name="nome" type="text" placeholder="nome"  size="30">
+                <p id="n1">
+                    <input id="nome" name="nome" type="text" placeholder="nome"  size="30">
+                    <input type="button" class="button" onclick="clearInputs('nome')" value = "clear nome">
                 </p>
             </div>
 
-            <div id="sobrenome">
+            <div>
                 Sobrenome:
-                <p>
-                    <input id="n2" name="sobrenome" type="text" placeholder="sobrenome" value="" size="30">
+                <p id="n2">
+                    <input name="sobrenome" id="sobrenome" type="text" placeholder="sobrenome" value="" size="30">
+                    <input type="button" class="button" onclick="clearInputs('sobrenome')" value = "clear sobrenome">
                 </p>
             </div>
 
             <div id="searchFor">
                 Procurar por:
                 <p>
-                    <input id="search" type="text" placeholder="texto que deseja procurar" value="" size="30">
-                    <input type = "button" onclick="searchForTxtIn('search','n1')" value="search">
+                    <input type="text" placeholder="texto que deseja procurar" value="" size="30">
+                    <input type="button" class="button" onclick="searchForTxtIn('search','n1')" value="search">
                 </p>
             </div>
 
             <div>
                 Números:
-                <p>
-                    <input id="nums" name="numeros" type="text" placeholder="digite os números separados por vírgula" value="" size="40">
-                    <input type = "button" onclick="getMaxNumber('nums')" value="alert maior número">
+                <p id="nums">
+                    <input name="numeros" type="text" placeholder="digite os números separados por vírgula" value="" size="40">
+                    <input type="button" class="button" onclick="getMaxNumber('nums')" value="alert maior número">
                 </p>
             </div>
 
@@ -86,8 +89,6 @@
                 <h1> Text input manipulation </h1>
                 <input type = "button" onclick="alertValuesOf(n1,n2)" value = "alert input value"/>
                 <input type = "button" onclick="alertPersonInfo('n1','n2')" value = "alert obj person"/>
-                <input type = "button" onclick="clearInputs('n1')" value = "clear nome">
-                <input type = "button" onclick="clearInputs('n2')" value = "clear sobrenome">
                 <input type = "button" onclick="clearInputs('n1','n2')" value = "clear both">
             </div>
         </div>

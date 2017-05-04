@@ -27,7 +27,7 @@
         </div>
         <div>
             <p id="demo"> Xablau </p>
-            <div id="txtManip">
+            <div id="fontSizeManip">
                 <input type = "button" class="button" onclick="increaseFontSize('demo', 1)" value = "FontSize++ 1px"/>
                 <input type = "button" class="button" onclick="decreaseFontSize('demo', 2)" value = "FontSize-- 1px"/>
                 <input type = "button" class="button" onclick="decreaseFontSize('demo', 2)" value = "FontSize-- 2px"/>
@@ -64,6 +64,14 @@
                 <p id="nums">
                     <input name="numeros" type="text" placeholder="digite os números separados por vírgula" value="" size="40">
                     <input type="button" class="button" onclick="getMaxNumber('nums')" value="alert maior número">
+                </p>
+            </div>
+
+            <div>
+                Data:
+                <p id="date">
+                    <input id="typedDate" pattern="\d{2}[/]\d{2}[/]\d{4}" type="text" placeholder="digite uma data no formato XX/XX/XXXX" value="" size="40">
+                    <input type="button" class="button" onclick="isTodayDateTypedIn('typedDate')" value="verificar data">
                 </p>
             </div>
 

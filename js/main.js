@@ -187,6 +187,24 @@ function getMaxNumber(inputID) {
     }
 }
 
+function sortNumbersFrom(inputID) {
+    var elem = document.getElementById(inputID);
+    var txt = elem.value;
+    if(txt != null && txt != ""){
+        var numbers = txt.split(",");
+        var totalNumbers = numbers.length;
+        var i;
+        for(i = 0; i < totalNumbers; i++){
+            numbers[i] = parseInt(numbers[i]);
+        }
+        numbers.sort(function(a,b){return a-b}); //compara a com b: se for (-), a < b; se for == 0, a==b; se for +, a > b
+        window.alert("numeros ordenados:" + numbers);
+    }
+    else{
+        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+    }
+}
+
 function isTodayDateTypedIn(inputID){
     var elem = document.getElementById(inputID);
     var txtTyped = elem.value;

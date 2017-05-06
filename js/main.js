@@ -197,7 +197,7 @@ function sortNumbersFrom(inputID) {
         for(i = 0; i < totalNumbers; i++){
             numbers[i] = parseInt(numbers[i]);
         }
-        numbers.sort(function(a,b){return a-b}); //compara a com b: se for (-), a < b; se for == 0, a==b; se for +, a > b
+        numbers.sort(function(a,b){return a-b}); // realiza a - b: se for (-), a < b; se for == 0, a==b; se for +, a > b
         window.alert("numeros ordenados:" + numbers);
     }
     else{
@@ -207,19 +207,19 @@ function sortNumbersFrom(inputID) {
 
 function isTodayDateTypedIn(inputID){
     var elem = document.getElementById(inputID);
-    var txtTyped = elem.value;
-    var dateTyped = txtTyped.split("/");
-    var dayTyped = parseInt(dateTyped[0]);
-    var monthTyped = parseInt(dateTyped[1]) - 1; // -1 pq javascript conta janeiro como 0, fevereiro como 1...
-    var yearTyped = parseInt(dateTyped[2]);
-    var shortTypedDate = new Date(yearTyped, monthTyped, dayTyped).toLocaleDateString();
+    var dateTyped = elem.value;
+    var dateTypedSplitted = dateTyped.split("/");
+    var dayTyped = parseInt(dateTypedSplitted[0]);
+    var monthTyped = parseInt(dateTypedSplitted[1]) - 1; // -1 pq javascript conta janeiro como 0, fevereiro como 1...
+    var yearTyped = parseInt(dateTypedSplitted[2]);
+    var shortDateTyped = new Date(yearTyped, monthTyped, dayTyped).toLocaleDateString();
     var todayDate = new Date();
     var shortTodayDate = todayDate.toLocaleDateString(); // criar uma função para checar se a data é válida
 
-    if(shortTypedDate === shortTodayDate){
+    if(shortDateTyped === shortTodayDate){
         window.alert("Você digitou a data de hoje!");
     }
-    else if(txtTyped != shortTypedDate){ /** ao transforma p/ date, a classe ajusta o tempo. Exemplo: se você digitar o
+    else if(dateTyped != shortDateTyped){ /** ao transforma p/ date, a classe ajusta o tempo. Exemplo: se você digitar o
      mês 12, ele vai para janeiro do próximo ano, já que os meses em date são entre 0 e 11, independentemente do ano ou dia digitados.
      Como sofrerá um ajuste, então a data mudará, sendo diferente da que eu digitei. Logo, isso quer dizer que é uma data inválida.*/
         window.alert("Você digitou uma data inválida!");
@@ -227,7 +227,57 @@ function isTodayDateTypedIn(inputID){
     else{
         window.alert("Você não digitou a data de hoje!");
     }
+}
 
+//to do: add/remover um número ou vários. Caso sejam vários, basta separá-los por vírgula. Se for só um, escreve-o.
+//transformar esse myArrayContains numa função
+var numbers = [3, 9, 1];
 
+function addNumber(inputID){
+    var elem = document.getElementById(inputID);
+    var numTyped = parseInt(elem.value);
+    if(!isNaN(numTyped)){
+        if(myArrayContains(numTyped)) {
+            window.alert("O número já foi add. Por favor, digite outro!");
+        }
+        else{
+            numbers.push(numTyped);
+            window.alert("O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + numbers);
+            elem.value = "";
+        }
+    }
+    else {
+        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+    }
+}
 
+function removeNumber(inputID){
+    var elem = document.getElementById(inputID);
+    var numTyped = parseInt(elem.value);
+    if(!isNaN(numTyped)){
+        if(myArrayContains(numTyped)) {
+            numbers.pop(numTyped);
+            window.alert("O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + numbers);
+        }
+        else{
+            window.alert("O número digitado não foi encontrado. Por favor, digite outro!");
+            elem.value = "";
+        }
+    }
+    else {
+        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+    }
+}
+
+function myArrayContains(number){
+    containsTheNumber = false;
+    var totalOfNumbers = numbers.length;
+    var i;
+    for(i = 0; i < totalOfNumbers; i++){
+        if(numbers[i] == number) {
+            containsTheNumber = true;
+            break;
+        }
+    }
+    return containsTheNumber;
 }

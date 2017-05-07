@@ -229,9 +229,41 @@ function isTodayDateTypedIn(inputID){
     }
 }
 
-//to do: add/remover um número ou vários. Caso sejam vários, basta separá-los por vírgula. Se for só um, escreve-o.
-//transformar esse myArrayContains numa função
+//to do: remover um número ou vários. Caso sejam vários, basta separá-los por vírgula. Se for só um, escreve-o.
 var numbers = [3, 9, 1];
+
+function addNumbers(inputID){
+    var elem = document.getElementById(inputID);
+    var txtTyped = elem.value;
+    var numsTyped = txtTyped.split(",");
+    var totalOfNumberTyped = numsTyped.length;
+
+    function addSeveralNumbers() {
+        var i;
+        for (i = 0; i < totalOfNumberTyped; i++) {
+            var myNumber = parseInt(numsTyped[i]);
+            if(myArrayContains(myNumber)){
+                window.alert("O array não aceita elementos duplicados. Talvez algum número que você digitou já tenha sido add.");
+            }
+            else{
+                numbers.push(myNumber);
+            }
+
+        }
+        window.alert("Os números foram add com sucesso. Veja como o array está atualmente:" + numbers);
+        elem.value = "";
+    }
+
+    if(totalOfNumberTyped == 1){
+        addNumber(inputID);
+    }
+    else if(totalOfNumberTyped > 1){
+        addSeveralNumbers();
+    }
+    else{
+        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+    }
+}
 
 function addNumber(inputID){
     var elem = document.getElementById(inputID);

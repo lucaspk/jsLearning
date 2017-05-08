@@ -229,7 +229,7 @@ function isTodayDateTypedIn(inputID){
     }
 }
 
-//to do: remover um número ou vários. Caso sejam vários, basta separá-los por vírgula. Se for só um, escreve-o.
+//to do: nesse remove, criar uma função para verificar se um número existe naquele array para retornar um bool usando indexOf
 var numbers = [3, 9, 1];
 
 function addNumbers(inputID){
@@ -248,7 +248,6 @@ function addNumbers(inputID){
             else{
                 numbers.push(myNumber);
             }
-
         }
         window.alert("Os números foram add com sucesso. Veja como o array está atualmente:" + numbers);
         elem.value = "";
@@ -270,15 +269,52 @@ function addNumber(inputID){
     var numTyped = parseInt(elem.value);
     if(!isNaN(numTyped)){
         if(myArrayContains(numTyped)) {
-            window.alert("O número já foi add. Por favor, digite outro!");
+            window.alert("O número" + numTyped + " já foi add. Por favor, digite outro!");
         }
         else{
             numbers.push(numTyped);
             window.alert("O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + numbers);
-            elem.value = "";
         }
     }
     else {
+        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+    }
+    elem.value = "";
+}
+
+function removeNumbers(inputID){
+    var elem = document.getElementById(inputID);
+    var txtTyped = elem.value;
+    var numsTyped = txtTyped.split(",");
+    var totalOfNumberTyped = numsTyped.length;
+
+    function removeSeveralNumbers() {
+        var i;
+        var outputMsg;
+        var myNumber;
+        var myNumberIndex;
+        for (i = 0; i < totalOfNumberTyped; i++) {
+            myNumber = parseInt(numsTyped[i]);
+            myNumberIndex = numbers.indexOf(myNumber);
+            if(myNumberIndex != -1){
+                numbers.splice(myNumberIndex,1);
+                outputMsg = "Os números foram removidos com sucesso. Veja como o array está atualmente:" + numbers;
+            }
+            else{
+                outputMsg = "Algum dos números digitados não consta no array. Por favor, digite apenas números que constam no array!";
+            }
+        }
+        window.alert(outputMsg);
+        elem.value = "";
+    }
+
+    if(totalOfNumberTyped == 1){
+        removeNumber(inputID);
+    }
+    else if(totalOfNumberTyped > 1){
+        removeSeveralNumbers();
+    }
+    else{
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
 }
@@ -286,19 +322,21 @@ function addNumber(inputID){
 function removeNumber(inputID){
     var elem = document.getElementById(inputID);
     var numTyped = parseInt(elem.value);
+    var outputMsg;
     if(!isNaN(numTyped)){
         if(myArrayContains(numTyped)) {
             numbers.pop(numTyped);
-            window.alert("O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + numbers);
+            outputMsg = "O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + numbers;
         }
         else{
-            window.alert("O número digitado não foi encontrado. Por favor, digite outro!");
-            elem.value = "";
+            outputMsg = "O número digitado não foi encontrado. Por favor, digite outro!";
         }
     }
     else {
-        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+        outputMsg = "Nada foi digitado no seguinte input: " + elem.name;
     }
+    window.alert(outputMsg);
+    elem.value = "";
 }
 
 function myArrayContains(number){

@@ -230,7 +230,14 @@ function isTodayDateTypedIn(inputID){
 }
 
 //to do: nesse remove, criar uma função para verificar se um número existe naquele array para retornar um bool usando indexOf
-var numbers = [3, 9, 1];
+var myNumbers = [3, 9, 1];
+
+//criar um check box pra decidir se é ascendente ou descendente a ordenação.
+function sortNumericArray(numbers) {
+    numbers.sort(function (a, b) {
+        return a - b
+    });
+}
 
 function addNumbers(inputID){
     var elem = document.getElementById(inputID);
@@ -246,10 +253,11 @@ function addNumbers(inputID){
                 window.alert("O array não aceita elementos duplicados. Talvez algum número que você digitou já tenha sido add.");
             }
             else{
-                numbers.push(myNumber);
+                myNumbers.push(myNumber);
+                sortNumericArray(myNumbers);
             }
         }
-        window.alert("Os números foram add com sucesso. Veja como o array está atualmente:" + numbers);
+        window.alert("Os números foram add com sucesso. Veja como o array está atualmente:" + myNumbers);
         elem.value = "";
     }
 
@@ -272,8 +280,9 @@ function addNumber(inputID){
             window.alert("O número" + numTyped + " já foi add. Por favor, digite outro!");
         }
         else{
-            numbers.push(numTyped);
-            window.alert("O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + numbers);
+            myNumbers.push(numTyped);
+            sortNumericArray(myNumbers);
+            window.alert("O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + myNumbers);
         }
     }
     else {
@@ -295,10 +304,10 @@ function removeNumbers(inputID){
         var myNumberIndex;
         for (i = 0; i < totalOfNumberTyped; i++) {
             myNumber = parseInt(numsTyped[i]);
-            myNumberIndex = numbers.indexOf(myNumber);
+            myNumberIndex = myNumbers.indexOf(myNumber);
             if(myNumberIndex != -1){
-                numbers.splice(myNumberIndex,1);
-                outputMsg = "Os números foram removidos com sucesso. Veja como o array está atualmente:" + numbers;
+                myNumbers.splice(myNumberIndex,1);
+                outputMsg = "Os números foram removidos com sucesso. Veja como o array está atualmente:" + myNumbers;
             }
             else{
                 outputMsg = "Algum dos números digitados não consta no array. Por favor, digite apenas números que constam no array!";
@@ -325,8 +334,8 @@ function removeNumber(inputID){
     var outputMsg;
     if(!isNaN(numTyped)){
         if(myArrayContains(numTyped)) {
-            numbers.pop(numTyped);
-            outputMsg = "O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + numbers;
+            myNumbers.pop(numTyped);
+            outputMsg = "O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + myNumbers;
         }
         else{
             outputMsg = "O número digitado não foi encontrado. Por favor, digite outro!";
@@ -341,10 +350,10 @@ function removeNumber(inputID){
 
 function myArrayContains(number){
     containsTheNumber = false;
-    var totalOfNumbers = numbers.length;
+    var totalOfNumbers = myNumbers.length;
     var i;
     for(i = 0; i < totalOfNumbers; i++){
-        if(numbers[i] == number) {
+        if(myNumbers[i] == number) {
             containsTheNumber = true;
             break;
         }

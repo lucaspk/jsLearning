@@ -333,8 +333,9 @@ function removeNumber(inputID){
     var numTyped = parseInt(elem.value);
     var outputMsg;
     if(!isNaN(numTyped)){
-        if(myArrayContains(numTyped)) {
-            myNumbers.pop(numTyped);
+        var myNumberIndex = myNumbers.indexOf(numTyped);
+        if(myNumberIndex != -1){
+            myNumbers.splice(myNumberIndex,1);
             outputMsg = "O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + myNumbers;
         }
         else{

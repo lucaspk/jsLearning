@@ -15,6 +15,10 @@
         <script src="js/main.js"></script>
         <script src="js/numbersFunctions.js"></script>
         <script src="js/fontManipulation.js"></script>
+        <script src="js/txtSearch.js"></script>
+        <script src="js/personData.js"></script>
+        <script src="js/inputManipulation.js"></script>
+        <script src="js/pageLayout.js"></script>
     </head>
 
     <br>
@@ -23,7 +27,6 @@
                 <li><a onclick="changeLayoutTo('red','white'); changeMsgTo('bg = Red; font = White')">Layout Red/White</a></li>
                 <li><a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a></li>
                 <li><a onclick="resetChange()">Default Layout</a></li>
-                <li><a onclick="getFirstCharOfTxt('n2')">Alert: 1ª letra do nome</a></li>
                 <li><a href="https://www.youtube.com/watch?v=7mJLmpuxzaQ" target="_blank">musica q tava procurando *-*</a></li>
             </ul>
         </div>
@@ -31,8 +34,10 @@
             <p id="demo"> Xablau </p>
             <div id="fontSizeManip">
                 <input type = "button" class="button" onclick="increaseFontSize('demo', 1)" value = "FontSize++ 1px"/>
-                <input type = "button" class="button" onclick="decreaseFontSize('demo', 2)" value = "FontSize-- 1px"/>
+                <input type = "button" class="button" onclick="decreaseFontSize('demo', 1)" value = "FontSize-- 1px"/>
                 <input type = "button" class="button" onclick="decreaseFontSize('demo', 2)" value = "FontSize-- 2px"/>
+                <input type = "button" class="button" onclick="hideElement('demo')" value = "Hide txt"/>
+                <input type = "button" class="button" onclick="recoverElement('demo')" value = "Recover txt"/>
             </div>
         </div>
 
@@ -42,6 +47,7 @@
                 <p id="n1">
                     <input id="nome" name="nome" type="text" placeholder="nome"  size="30">
                     <input type="button" class="button" onclick="clearInputs('nome')" value = "clear nome">
+                    <input type="button" class="button" onclick="getFirstCharOfTxt('nome')" value = "Alert 1ª letra do nome">
                 </p>
             </div>
 
@@ -56,8 +62,8 @@
             <div id="searchFor">
                 Procurar por:
                 <p>
-                    <input type="text" placeholder="texto que deseja procurar" value="" size="30">
-                    <input type="button" class="button" onclick="searchForTxtIn('search','n1')" value="search">
+                    <input type="text" id="search" placeholder="texto que deseja procurar" value="" size="30">
+                    <input type="button" class="button" onclick="searchForTxtIn('search','nome')" value="search">
                 </p>
             </div>
 
@@ -94,12 +100,6 @@
             <p> Inicializa as variáveis com valor indefinido.</p>
             <p> Exemplo de array: var carros = ["Saab", "Volvo", "BMW"]; </p>
             <p> Exemplo de obj: var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}; </p>
-
-            <div id="txt">
-                <h1> Main text manipulation </h1>
-                <input type = "button" onclick="hideElement('demo')" value = "Hide txt"/>
-                <input type = "button" onclick="recoverElement('demo')" value = "Recover txt"/>
-            </div>
 
             <div id="inputManipulation">
                 <h1> Text input manipulation </h1>

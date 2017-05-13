@@ -70,7 +70,7 @@
             <div>
                 Números:
                 <p id="nums">
-                    <input name="numeros" id="numeros" type="text" placeholder="digite os números separados por vírgula" value="" size="40">
+                    <input name="numberInput" id="numeros" type="text" placeholder="digite os números separados por vírgula" value="" size="40">
                     <input type="button" class="button" onclick="getMaxNumber('numeros')" value="alert maior número">
                     <input type="button" class="button" onclick="sortNumbersFrom('numeros')" value="alert números ordenados">
                 </p>
@@ -78,6 +78,14 @@
                     <input name="numberInput" id="numberInput" type="text" placeholder="digite qnts nums quiser,mas separe por ','" value="" size="40">
                     <input type="button" class="button" onclick="addNumbers('numberInput')" value="add número">
                     <input type="button" class="button" onclick="removeNumbers('numberInput')" value="remover número">
+                </p>
+                <p id="nums">
+                    <input name="numberInput" id="numberLimit" type="text" placeholder="a partir de qual posição deseja imprimir?" value="" size="40">
+                    <input type="button" class="button" onclick="slicingNumbers('numberLimit')" value="print slicing">
+                </p>
+                <p id="nums">
+                    <input name="numberInput" id="numberChange" type="text" placeholder="digite:x por y p/ trocar(se 'x' existir no array)" value="" size="40">
+                    <input type="button" class="button" onclick="changeNumberToOther('numberChange')" value="change number">
                 </p>
             </div>
 

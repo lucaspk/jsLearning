@@ -132,6 +132,37 @@ function addNumber(inputID){
     elem.value = "";
 }
 
+function changeNumberToOther(inputID) {
+    var elem = document.getElementById(inputID);
+    var txtTyped = elem.value.split(" ");
+    var oldNumber = parseInt(txtTyped[0]);
+    var newNumber = parseInt(txtTyped[2]);
+    var oldNumberIndex = myNumbers.indexOf(oldNumber);
+    if(oldNumberIndex != -1){
+        myNumbers[oldNumberIndex] = newNumber;
+        window.alert("O numero " + newNumber + " agora faz parte do array, veja:" + myNumbers);
+    }
+    else{
+        window.alert("O número " + oldNumber + " não existe no array, veja:" + myNumbers);
+    }
+
+}
+
+function slicingNumbers(inputID) {
+    var elem = document.getElementById(inputID);
+    var numTyped = elem.value;
+    var numTypedValue = parseInt(numTyped) - 1;
+    if(numTypedValue >= 0 && numTypedValue < myNumbers.length){
+        window.alert("Os número a partir da " + numTyped + " posição são:" + myNumbers.slice(numTypedValue));
+    }
+    else{
+        window.alert("posição inexistente");
+    }
+    elem.value = "";
+
+}
+
+// acho que dá pra fazer sem esse remove pra um número só
 function removeNumbers(inputID){
     var elem = document.getElementById(inputID);
     var txtTyped = elem.value;
@@ -147,7 +178,7 @@ function removeNumbers(inputID){
             myNumber = parseInt(numsTyped[i]);
             myNumberIndex = myNumbers.indexOf(myNumber);
             if(myNumberIndex != -1){
-                myNumbers.splice(myNumberIndex,1);
+                myNumbers.splice(myNumberIndex,/* howManyElems = */ 1);
                 outputMsg = "Os números foram removidos com sucesso. Veja como o array está atualmente:" + myNumbers;
             }
             else{

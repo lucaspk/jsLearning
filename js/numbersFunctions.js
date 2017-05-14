@@ -28,7 +28,7 @@ function getMaxNumber(inputID) {
     }
 }
 
-function sortNumbersFrom(inputID) {
+function sortDescendNumbersFrom(inputID) {
     var elem = document.getElementById(inputID);
     var txt = elem.value;
     if(txt != null && txt != ""){
@@ -38,8 +38,28 @@ function sortNumbersFrom(inputID) {
         for(i = 0; i < totalNumbers; i++){
             numbers[i] = parseInt(numbers[i]);
         }
-        numbers.sort(function(a,b){return a-b}); // realiza a - b: se for (-), a < b; se for == 0, a==b; se for +, a > b
-        window.alert("numeros ordenados:" + numbers);
+        sortDescendNumericArray(numbers);
+        window.alert("numeros ordenados descendentemente:" + numbers);
+    }
+    else{
+        window.alert("Nada foi digitado no seguinte input: " + elem.name);
+    }
+}
+
+
+
+function sortAscendNumbersFrom(inputID) {
+    var elem = document.getElementById(inputID);
+    var txt = elem.value;
+    if(txt != null && txt != ""){
+        var numbers = txt.split(",");
+        var totalNumbers = numbers.length;
+        var i;
+        for(i = 0; i < totalNumbers; i++){
+            numbers[i] = parseInt(numbers[i]);
+        }
+        sortAscendNumericArray(numbers); // realiza a - b: se for (-), a < b; se for == 0, a==b; se for +, a > b
+        window.alert("numeros ordenados ascendentemente:" + numbers);
     }
     else{
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
@@ -74,9 +94,15 @@ function isTodayDateTypedIn(inputID){
 var myNumbers = [3, 9, 1];
 
 //criar um check box pra decidir se é ascendente ou descendente a ordenação.
-function sortNumericArray(numbers) {
+function sortAscendNumericArray(numbers) {
     numbers.sort(function (a, b) {
         return a - b
+    });
+}
+
+function sortDescendNumericArray(numbers){
+    numbers.sort(function (a, b) {
+        return b - a
     });
 }
 
@@ -95,7 +121,7 @@ function addNumbers(inputID){
             }
             else{
                 myNumbers.push(myNumber);
-                sortNumericArray(myNumbers);
+                sortAscendNumericArray(myNumbers);
             }
         }
         window.alert("Os números foram add com sucesso. Veja como o array está atualmente:" + myNumbers);
@@ -122,7 +148,7 @@ function addNumber(inputID){
         }
         else{
             myNumbers.push(numTyped);
-            sortNumericArray(myNumbers);
+            sortAscendNumericArray(myNumbers);
             window.alert("O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + myNumbers);
         }
     }

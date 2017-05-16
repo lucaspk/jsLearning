@@ -19,6 +19,7 @@
         <script src="js/personData.js"></script>
         <script src="js/inputManipulation.js"></script>
         <script src="js/pageLayout.js"></script>
+        <script src="js/dateFunctions.js"></script>
     </head>
 
     <br>
@@ -28,6 +29,7 @@
                 <li><a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a></li>
                 <li><a onclick="resetChange()">Default Layout</a></li>
                 <li><a href="https://www.youtube.com/watch?v=7mJLmpuxzaQ" target="_blank">musica q tava procurando *-*</a></li>
+                <li><a onclick="isWeekend()">eh fim de semana?</a></li>
             </ul>
         </div>
         <div>
@@ -104,9 +106,7 @@
 
         <div>
             <p> To do: colocar cada categoria lado a lado e num menu bonito feito por mim com base no tympanus.net.</p>
-            <p> JavaScript é Case Sensitive.</p>
             <p> Estudar selectors(é importante).</p>
-            <p> Inicializa as variáveis com valor indefinido.</p>
             <p> Exemplo de array: var carros = ["Saab", "Volvo", "BMW"]; </p>
             <p> Exemplo de obj: var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}; </p>
 
@@ -117,7 +117,14 @@
                 <input type = "button" onclick="clearInputs('n1','n2')" value = "clear both">
             </div>
         </div>
-
+        <div>
+            <h1> Seção de alertas e recomendações </h1>
+            <p> > JavaScript é Case Sensitive.</p>
+            <p> > Inicializar as variáveis com valor indefinido.</p>
+            <p> > Não instancie booleans com 'new Boolean(...)', pois isso é um objeto, o que é mais lento(execução) e não pode ser comparado com == ou ===. Instancie com false ou true mesmo.</p>
+            <p> > Raciocínio análogo ao anterior vale para Strings e inteiros(criados com 'new Number(...)').</p>
+            <p> > Comparar 2 objetos(x e y, digamos) x==y ou x===y sempre retornará falso.</p>
+        </div>
 
     </body>
 

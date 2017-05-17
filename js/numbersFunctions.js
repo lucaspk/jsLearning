@@ -235,3 +235,41 @@ function myArrayContains(number){
     }
     return containsTheNumber;
 }
+
+function printNumsInRange(begin, end){
+    var currentNumber = begin;
+    var output = "";
+    while(currentNumber <= end){
+        if(currentNumber < end){
+            output += currentNumber + ","
+        }
+        else{
+            output += currentNumber + "."
+        }
+        currentNumber++;
+    }
+    window.alert("números no range fornecido: " + output);
+}
+
+function printNumsInRangeSkippingEven(begin, end){
+    var currentNumber = begin;
+    var output = "";
+    while(currentNumber < end){
+        if(currentNumber % 2 == 0){
+            currentNumber++;
+            continue;
+        }
+        else{
+            if(currentNumber < end){
+                output += currentNumber + ","
+            }
+            else{
+                output += currentNumber + "."
+            }
+        }
+        currentNumber++;
+    }
+    window.alert("números no range fornecido: " + output);
+}
+
+

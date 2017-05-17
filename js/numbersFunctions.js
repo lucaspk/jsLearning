@@ -272,4 +272,21 @@ function printNumsInRangeSkippingEven(begin, end){
     window.alert("números no range fornecido: " + output);
 }
 
+function dec2bin(inputID){
+    var elem = document.getElementById(inputID);
+    var decimal = elem.value;
+    bin = (decimal >>> 0).toString(2);
+    window.alert("O número "+ decimal +" em binário é:" + bin );
+}
 
+function bin2dec(inputID){
+    var elem = document.getElementById(inputID);
+    var bin = elem.value;
+    if(bin.match("[2-9]")){
+        window.alert("o número já está em decimal!");
+    }
+    else{
+        dec = parseInt(bin, 2).toString(10);
+        window.alert("O binário "+ bin +" em decimal é:" + dec );
+    }
+}

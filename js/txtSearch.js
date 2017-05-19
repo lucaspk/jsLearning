@@ -13,11 +13,13 @@ function searchForTxtIn(whatSearchID, whereSearchID) {
     var whereSearch = document.getElementById(whereSearchID);
     var providedTxt = whereSearch.value;
 
+    var posOfTxtToFind = providedTxt.toLowerCase().search(txtToFind);
+
     if(providedTxt == null || providedTxt == ""){
         window.alert("Nada foi digitado no seguinte input: " + whereSearch.name );
     }
-    else if(providedTxt.toLowerCase().search(txtToFind)!= -1){
-        window.alert("Substring \"" + txtToFind + "\" encontrada no texto:" + providedTxt);
+    else if(posOfTxtToFind != -1){
+        window.alert("Substring \"" + txtToFind + "\" encontrada no texto:" + providedTxt + " a partir da posição '" + posOfTxtToFind + "'");
     }
     else{
         window.alert("Substring \"" + txtToFind + "\" não encontrada no texto:" + providedTxt);

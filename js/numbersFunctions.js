@@ -154,12 +154,14 @@ function slicingNumbers(inputID) {
     var elem = document.getElementById(inputID);
     var numTyped = elem.value;
     var numTypedValue = parseInt(numTyped) - 1;
+    var msg;
     if(numTypedValue >= 0 && numTypedValue < myNumbers.length){
-        window.alert("Os número a partir da " + numTyped + " posição são:" + myNumbers.slice(numTypedValue));
+        msg = "Os número a partir da " + numTyped + " posição são:" + myNumbers.slice(numTypedValue);
     }
     else{
-        window.alert("posição inexistente");
+        msg = "posição inexistente";
     }
+    window.alert(msg);
     elem.value = "";
 
 }
@@ -282,11 +284,13 @@ function dec2bin(inputID){
 function bin2dec(inputID){
     var elem = document.getElementById(inputID);
     var bin = elem.value;
+    var msg;
     if(bin.match("[2-9]")){
-        window.alert("o número já está em decimal!");
+        msg = "o número já está em decimal!";
     }
     else{
         dec = parseInt(bin, 2).toString(10);
-        window.alert("O binário "+ bin +" em decimal é:" + dec );
+        msg = "O binário "+ bin +" em decimal é:" + dec ;
     }
+    window.alert(msg);
 }

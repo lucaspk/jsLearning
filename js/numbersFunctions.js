@@ -105,7 +105,7 @@ function addNumbers(inputID){
     }
 
     if(totalOfNumberTyped == 1){
-        addNumber(inputID);
+        addNumberWithTryCatchHandling(inputID);
     }
     else if(totalOfNumberTyped > 1){
         addSeveralNumbers();
@@ -113,6 +113,31 @@ function addNumbers(inputID){
     else{
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
+}
+
+function addNumberWithTryCatchHandling(inputID){
+    var elem = document.getElementById(inputID);
+
+    try{
+        if(elem.value == null || elem.value == "") {
+            throw "Nada foi digitado no seguinte input: " + elem.name;
+        }
+
+        var numTyped = parseInt(elem.value);
+        if(myArrayContains(numTyped)) {
+            throw "O número" + numTyped + " já foi add. Por favor, digite outro!";
+        }
+        else{
+            myNumbers.push(numTyped);
+            sortAscendNumericArray(myNumbers);
+            throw "O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + myNumbers;
+        }
+    }catch (error){ // catch will handle the error
+        window.alert(error);
+    }finally{ // block of code that will be executed regardless of the try/catch block ~ bloco de código que será executado independentemente do resultado do bloco try-catch
+        elem.value = "";
+    }
+
 }
 
 function addNumber(inputID){
@@ -147,7 +172,6 @@ function changeNumberToOther(inputID) {
     else{
         window.alert("O número " + oldNumber + " não existe no array, veja:" + myNumbers);
     }
-
 }
 
 function slicingNumbers(inputID) {
@@ -163,7 +187,6 @@ function slicingNumbers(inputID) {
     }
     window.alert(msg);
     elem.value = "";
-
 }
 
 // acho que dá pra fazer sem esse remove pra um número só

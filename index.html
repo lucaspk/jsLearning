@@ -131,6 +131,23 @@
             <p> > Não instancie booleans com 'new Boolean(...)', pois isso é um objeto, o que é mais lento(execução) e não pode ser comparado com == ou ===. Instancie com false ou true mesmo.</p>
             <p> > Raciocínio análogo ao anterior vale para Strings e inteiros(criados com 'new Number(...)').</p>
             <p> > Comparar 2 objetos(x e y, digamos) x==y ou x===y sempre retornará falso.</p>
+            <p> > Hoisting: posso declarar uma variável depois de usá-la, pois a declaração de variável em JS vai para o topo antes mesmo do código ser executado.
+                MAS É APENAS A DECLARAÇÃO. NÃO EXISTE HOISTING DE INICIALIZAÇÃO EM JS. </p>
+            <p> > Também existe Hoisting de Função em JS: seu nome e seu corpo serão hoisted. </p>
+            <p> > JS só tem escopo a nível de função. Exemplo: se você criar uma variável dentro do if, ela terá aquele valor mesmo fora(if não define um escopo como em outras liguagens cuja definição de escopo é por bloco, como C/C++ e Java).
+            Se quisermos simular a definição de escopo de outras linguagens, podemos usar clojures para isso.</p>
+            <p> > Strict Mode: não podemos usar variáveis que não foram declaradas.</p>
+        </div>
+        <div>
+            <h1> Escopo em js </h1>
+            <p> Deveria imprimir 1 se fosse como C/C++ e Java na definição de escopo:
+                <input class="button" type="button" onclick="hoistingFun(2)" value="hoisting em js">
+            </p>
+
+            <h1> Strict mode em js </h1>
+            <p> Não vai aparecer nada, pois está em 'strict mode' e variáveis não declaradas não são permitidas:
+                <input class="button" type="button" onclick="strictModeFun()" value="Strict mode em js">
+            </p>
         </div>
 
     </body>

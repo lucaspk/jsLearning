@@ -317,3 +317,17 @@ function bin2dec(inputID){
     }
     window.alert(msg);
 }
+// http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
+function hoistingFun(argm){
+    var number = 1;
+    if(parseInt(argm) == 2){
+        var number = 2;
+    }
+    window.alert(number);
+}
+
+function strictModeFun(){
+    "use strict";
+    x = 150;
+    window.alert(x);
+}

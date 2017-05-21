@@ -6,24 +6,22 @@
 function getMaxNumber(inputID) {
     var elem = document.getElementById(inputID);
     var txt = elem.value;
-    if(txt != null && txt != ""){
+    if (txt != null && txt != "") {
         var numbers = txt.split(",");
         var max = parseInt(numbers[0]);
-        if(isNaN(max)){
+        if (isNaN(max)) {
             window.alert("Você não digitou um número!!!");
-        }
-        else{
-            for(var i = 1; i < numbers.length; i++){
+        } else {
+            for (var i = 1; i < numbers.length; i++) {
                 var currentNumber = parseInt(numbers[i]);
-                if(currentNumber > max){
+                if (currentNumber > max) {
                     max = currentNumber;
                 }
             }
             window.alert("maior número digitado foi: " + max);
         }
         elem.value = ""; /*assim que pegar os números, apaga eles do input, para o caso de querer digitar outros.*/
-    }
-    else{
+    } else {
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
 }
@@ -31,17 +29,16 @@ function getMaxNumber(inputID) {
 function sortDescendNumbersFrom(inputID) {
     var elem = document.getElementById(inputID);
     var txt = elem.value;
-    if(txt != null && txt != ""){
+    if (txt != null && txt != "") {
         var numbers = txt.split(",");
         var totalNumbers = numbers.length;
         var i;
-        for(i = 0; i < totalNumbers; i++){
+        for (i = 0; i < totalNumbers; i++) {
             numbers[i] = parseInt(numbers[i]);
         }
         sortDescendNumericArray(numbers);
         window.alert("numeros ordenados descendentemente:" + numbers);
-    }
-    else{
+    } else {
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
 }
@@ -51,17 +48,16 @@ function sortDescendNumbersFrom(inputID) {
 function sortAscendNumbersFrom(inputID) {
     var elem = document.getElementById(inputID);
     var txt = elem.value;
-    if(txt != null && txt != ""){
+    if (txt != null && txt != "") {
         var numbers = txt.split(",");
         var totalNumbers = numbers.length;
         var i;
-        for(i = 0; i < totalNumbers; i++){
+        for (i = 0; i < totalNumbers; i++) {
             numbers[i] = parseInt(numbers[i]);
         }
         sortAscendNumericArray(numbers); // realiza a - b: se for (-), a < b; se for == 0, a==b; se for +, a > b
         window.alert("numeros ordenados ascendentemente:" + numbers);
-    }
-    else{
+    } else {
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
 }
@@ -76,13 +72,13 @@ function sortAscendNumericArray(numbers) {
     });
 }
 
-function sortDescendNumericArray(numbers){
+function sortDescendNumericArray(numbers) {
     numbers.sort(function (a, b) {
         return b - a
     });
 }
 
-function addNumbers(inputID){
+function addNumbers(inputID) {
     var elem = document.getElementById(inputID);
     var txtTyped = elem.value;
     var numsTyped = txtTyped.split(",");
@@ -92,10 +88,9 @@ function addNumbers(inputID){
         var i;
         for (i = 0; i < totalOfNumberTyped; i++) {
             var myNumber = parseInt(numsTyped[i]);
-            if(myArrayContains(myNumber)){
+            if (myArrayContains(myNumber)) {
                 window.alert("O array não aceita elementos duplicados. Talvez algum número que você digitou já tenha sido add.");
-            }
-            else{
+            } else {
                 myNumbers.push(myNumber);
                 sortAscendNumericArray(myNumbers);
             }
@@ -103,57 +98,50 @@ function addNumbers(inputID){
         window.alert("Os números foram add com sucesso. Veja como o array está atualmente:" + myNumbers);
         elem.value = "";
     }
-
-    if(totalOfNumberTyped == 1){
+    if (totalOfNumberTyped == 1) {
         addNumberWithTryCatchHandling(inputID);
-    }
-    else if(totalOfNumberTyped > 1){
+    } else if (totalOfNumberTyped > 1) {
         addSeveralNumbers();
-    }
-    else{
+    } else {
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
 }
 
-function addNumberWithTryCatchHandling(inputID){
+function addNumberWithTryCatchHandling(inputID) {
     var elem = document.getElementById(inputID);
 
-    try{
-        if(elem.value == null || elem.value == "") {
+    try {
+        if (elem.value == null || elem.value == "") {
             throw "Nada foi digitado no seguinte input: " + elem.name;
         }
-
         var numTyped = parseInt(elem.value);
-        if(myArrayContains(numTyped)) {
+        if (myArrayContains(numTyped)) {
             throw "O número" + numTyped + " já foi add. Por favor, digite outro!";
-        }
-        else{
+        } else {
             myNumbers.push(numTyped);
             sortAscendNumericArray(myNumbers);
             throw "O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + myNumbers;
         }
-    }catch (error){ // catch will handle the error
+    } catch (error) { // catch will handle the error
         window.alert(error);
-    }finally{ // block of code that will be executed regardless of the try/catch block ~ bloco de código que será executado independentemente do resultado do bloco try-catch
+    } finally { // block of code that will be executed regardless of the try/catch block ~ bloco de código que será executado independentemente do resultado do bloco try-catch
         elem.value = "";
     }
 
 }
 
-function addNumber(inputID){
+function addNumber(inputID) {
     var elem = document.getElementById(inputID);
     var numTyped = parseInt(elem.value);
-    if(!isNaN(numTyped)){
-        if(myArrayContains(numTyped)) {
+    if (!isNaN(numTyped)) {
+        if (myArrayContains(numTyped)) {
             window.alert("O número" + numTyped + " já foi add. Por favor, digite outro!");
-        }
-        else{
+        } else {
             myNumbers.push(numTyped);
             sortAscendNumericArray(myNumbers);
             window.alert("O número " + numTyped + " foi add com sucesso. Veja como o array está atualmente:" + myNumbers);
         }
-    }
-    else {
+    } else {
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
     elem.value = "";
@@ -165,11 +153,11 @@ function changeNumberToOther(inputID) {
     var oldNumber = parseInt(txtTyped[0]);
     var newNumber = parseInt(txtTyped[2]);
     var oldNumberIndex = myNumbers.indexOf(oldNumber);
-    if(oldNumberIndex != -1){
+
+    if (oldNumberIndex != -1) {
         myNumbers[oldNumberIndex] = newNumber;
         window.alert("O numero " + newNumber + " agora faz parte do array, veja:" + myNumbers);
-    }
-    else{
+    } else {
         window.alert("O número " + oldNumber + " não existe no array, veja:" + myNumbers);
     }
 }
@@ -179,10 +167,9 @@ function slicingNumbers(inputID) {
     var numTyped = elem.value;
     var numTypedValue = parseInt(numTyped) - 1;
     var msg;
-    if(numTypedValue >= 0 && numTypedValue < myNumbers.length){
+    if (numTypedValue >= 0 && numTypedValue < myNumbers.length) {
         msg = "Os número a partir da " + numTyped + " posição são:" + myNumbers.slice(numTypedValue);
-    }
-    else{
+    } else {
         msg = "posição inexistente";
     }
     window.alert(msg);
@@ -190,7 +177,7 @@ function slicingNumbers(inputID) {
 }
 
 // acho que dá pra fazer sem esse remove pra um número só
-function removeNumbers(inputID){
+function removeNumbers(inputID) {
     var elem = document.getElementById(inputID);
     var txtTyped = elem.value;
     var numsTyped = txtTyped.split(",");
@@ -204,56 +191,50 @@ function removeNumbers(inputID){
         for (i = 0; i < totalOfNumberTyped; i++) {
             myNumber = parseInt(numsTyped[i]);
             myNumberIndex = myNumbers.indexOf(myNumber);
-            if(myNumberIndex != -1){
+            if (myNumberIndex != -1) {
                 myNumbers.splice(myNumberIndex,/* howManyElems = */ 1);
                 outputMsg = "Os números foram removidos com sucesso. Veja como o array está atualmente:" + myNumbers;
-            }
-            else{
+            } else {
                 outputMsg = "Algum dos números digitados não consta no array. Por favor, digite apenas números que constam no array!";
             }
         }
         window.alert(outputMsg);
         elem.value = "";
     }
-
-    if(totalOfNumberTyped == 1){
+    if (totalOfNumberTyped == 1) {
         removeNumber(inputID);
-    }
-    else if(totalOfNumberTyped > 1){
+    } else if (totalOfNumberTyped > 1) {
         removeSeveralNumbers();
-    }
-    else{
+    } else {
         window.alert("Nada foi digitado no seguinte input: " + elem.name);
     }
 }
 
-function removeNumber(inputID){
+function removeNumber(inputID) {
     var elem = document.getElementById(inputID);
     var numTyped = parseInt(elem.value);
     var outputMsg;
-    if(!isNaN(numTyped)){
+    if (!isNaN(numTyped)) {
         var myNumberIndex = myNumbers.indexOf(numTyped);
-        if(myNumberIndex != -1){
+        if (myNumberIndex != -1) {
             myNumbers.splice(myNumberIndex,1);
             outputMsg = "O número " + numTyped + " foi removido com sucesso. Veja como o array está atualmente:" + myNumbers;
-        }
-        else{
+        } else {
             outputMsg = "O número digitado não foi encontrado. Por favor, digite outro!";
         }
-    }
-    else {
+    } else {
         outputMsg = "Nada foi digitado no seguinte input: " + elem.name;
     }
     window.alert(outputMsg);
     elem.value = "";
 }
 
-function myArrayContains(number){
+function myArrayContains(number) {
     containsTheNumber = false;
     var totalOfNumbers = myNumbers.length;
     var i;
-    for(i = 0; i < totalOfNumbers; i++){
-        if(myNumbers[i] == number) {
+    for (i = 0; i < totalOfNumbers; i++) {
+        if (myNumbers[i] == number) {
             containsTheNumber = true;
             break;
         }
@@ -261,14 +242,13 @@ function myArrayContains(number){
     return containsTheNumber;
 }
 
-function printNumsInRange(begin, end){
+function printNumsInRange(begin, end) {
     var currentNumber = begin;
     var output = "";
-    while(currentNumber <= end){
-        if(currentNumber < end){
+    while (currentNumber <= end) {
+        if (currentNumber < end) {
             output += currentNumber + ","
-        }
-        else{
+        } else {
             output += currentNumber + "."
         }
         currentNumber++;
@@ -276,19 +256,17 @@ function printNumsInRange(begin, end){
     window.alert("números no range fornecido: " + output);
 }
 
-function printNumsInRangeSkippingEven(begin, end){
+function printNumsInRangeSkippingEven(begin, end) {
     var currentNumber = begin;
     var output = "";
-    while(currentNumber < end){
-        if(currentNumber % 2 == 0){
+    while (currentNumber < end) {
+        if (currentNumber % 2 == 0) {
             currentNumber++;
             continue;
-        }
-        else{
-            if(currentNumber < end){
+        } else {
+            if (currentNumber < end) {
                 output += currentNumber + ","
-            }
-            else{
+            } else {
                 output += currentNumber + "."
             }
         }
@@ -297,36 +275,35 @@ function printNumsInRangeSkippingEven(begin, end){
     window.alert("números no range fornecido: " + output);
 }
 
-function dec2bin(inputID){
+function dec2bin(inputID) {
     var elem = document.getElementById(inputID);
     var decimal = elem.value;
     bin = (decimal >>> 0).toString(2);
     window.alert("O número "+ decimal +" em binário é:" + bin );
 }
 
-function bin2dec(inputID){
+function bin2dec(inputID) {
     var elem = document.getElementById(inputID);
     var bin = elem.value;
     var msg;
-    if(bin.match("[2-9]")){
+    if (bin.match("[2-9]")) {
         msg = "o número já está em decimal!";
-    }
-    else{
+    } else {
         dec = parseInt(bin, 2).toString(10);
         msg = "O binário "+ bin +" em decimal é:" + dec ;
     }
     window.alert(msg);
 }
 // http://loopinfinito.com.br/2014/10/29/hoisting-e-escopo-em-javascript/
-function hoistingFun(argm){
+function hoistingFun(argm) {
     var number = 1;
-    if(parseInt(argm) == 2){
+    if (parseInt(argm) == 2) {
         var number = 2;
     }
     window.alert(number);
 }
 
-function strictModeFun(){
+function strictModeFun() {
     "use strict";
     x = 150;
     window.alert(x);

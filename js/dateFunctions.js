@@ -2,7 +2,7 @@
  * Created by Lucas on 15/05/2017.
  */
 
-function isTodayDateTypedIn(inputID){
+function isTodayDateTypedIn(inputID) {
     var elem = document.getElementById(inputID);
     var dateTyped = elem.value;
     var dateTypedSplitted = dateTyped.split("/");
@@ -13,20 +13,18 @@ function isTodayDateTypedIn(inputID){
     var todayDate = new Date();
     var shortTodayDate = todayDate.toLocaleDateString(); // criar uma função para checar se a data é válida
 
-    if(shortDateTyped === shortTodayDate){
+    if (shortDateTyped === shortTodayDate) {
         window.alert("Você digitou a data de hoje!");
-    }
-    else if(dateTyped != shortDateTyped){ /** ao transforma p/ date, a classe ajusta o tempo. Exemplo: se você digitar o
+    } else if (dateTyped != shortDateTyped) { /** ao transforma p/ date, a classe ajusta o tempo. Exemplo: se você digitar o
      mês 12, ele vai para janeiro do próximo ano, já que os meses em date são entre 0 e 11, independentemente do ano ou dia digitados.
      Como sofrerá um ajuste, então a data mudará, sendo diferente da que eu digitei. Logo, isso quer dizer que é uma data inválida.*/
     window.alert("Você digitou uma data inválida!");
-    }
-    else{
+    } else {
         window.alert("Você não digitou a data de hoje!");
     }
 }
 
-function isWeekend(){
+function isWeekend() {
     var msg;
     switch (new Date().getDay()){
         case 0:

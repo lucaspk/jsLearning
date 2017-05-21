@@ -6,7 +6,6 @@
  *
  * */
 function searchForTxtIn(whatSearchID, whereSearchID) {
-
     var whatSearch = document.getElementById(whatSearchID);
     var txtToFind = whatSearch.value;
 
@@ -15,24 +14,21 @@ function searchForTxtIn(whatSearchID, whereSearchID) {
 
     var posOfTxtToFind = providedTxt.toLowerCase().search(txtToFind);
 
-    if(providedTxt == null || providedTxt == ""){
+    if (providedTxt == null || providedTxt == "") {
         window.alert("Nada foi digitado no seguinte input: " + whereSearch.name );
-    }
-    else if(posOfTxtToFind != -1){
+    } else if(posOfTxtToFind != -1) {
         window.alert("Substring \"" + txtToFind + "\" encontrada no texto:" + providedTxt + " a partir da posição '" + posOfTxtToFind + "'");
-    }
-    else{
+    } else {
         window.alert("Substring \"" + txtToFind + "\" não encontrada no texto:" + providedTxt);
     }
 }
 
-function getFirstCharOfTxt(inputID){
+function getFirstCharOfTxt(inputID) {
     var elem = document.getElementById(inputID);
     txt = elem.value;
-    if(txt != null && txt != ""){
+    if (txt != null && txt != "") {
         window.alert("A primeira letra do " + elem.name + " digitado é: " + txt.charAt(0));
-    }
-    else{
+    } else {
         window.alert("Nada foi digitado no seguinte input:" + elem.name );
     }
 }

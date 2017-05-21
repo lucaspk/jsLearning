@@ -6,7 +6,7 @@
  * Each click increment the fontsize of the text related to the given id by increaseFactor pixels.
  *
  * */
-function increaseFontSize(id, increaseFactor){
+function increaseFontSize(id, increaseFactor) {
     changeFontSize(id, increaseFactor);
 }
 
@@ -14,7 +14,7 @@ function increaseFontSize(id, increaseFactor){
  * Each click decrement the fontsize of the text related to the given id by decreaseFactor pixels.
  *
  * */
-function decreaseFontSize(id, decreaseFactor){
+function decreaseFontSize(id, decreaseFactor) {
     changeFontSize(id, decreaseFactor * (-1));
 }
 
@@ -25,9 +25,9 @@ function decreaseFontSize(id, decreaseFactor){
  * - To decrease, you multiply the change factor to (-1).
  *
  * */
-function changeFontSize(id, changeFactor){
+function changeFontSize(id, changeFactor) {
     txt = document.getElementById(id);
-    style = window.getComputedStyle(txt,null).getPropertyValue('font-size'); /*variável criada sem 'var' terá escopo global automaticamente*/
+    style = window.getComputedStyle(txt, null).getPropertyValue('font-size'); /*variável criada sem 'var' terá escopo global automaticamente*/
     currentSize = parseFloat(style);
     txt.style.fontSize = (currentSize + changeFactor) + 'px';
 }
@@ -35,9 +35,9 @@ function changeFontSize(id, changeFactor){
 /**
  * Each click increment one pixel in the fontsize of the text related to the given id.
  * */
-function increaseFontSizeOnePixel(id){
+function increaseFontSizeOnePixel(id) {
     txt = document.getElementById(id);
-    style = window.getComputedStyle(txt,null).getPropertyValue('font-size');
+    style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
     currentSize = parseFloat(style);
     txt.style.fontSize = (currentSize + 1) + 'px';
 }
@@ -45,9 +45,9 @@ function increaseFontSizeOnePixel(id){
 /**
  * Each click decrement one pixel in the fontsize of the text related to the given id.
  * */
-function decreaseFontSizeOnePixel(id){
+function decreaseFontSizeOnePixel(id) {
     txt = document.getElementById(id);
-    style = window.getComputedStyle(txt,null).getPropertyValue('font-size');
+    style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
     currentSize = parseFloat(style);
     txt.style.fontSize = (currentSize - 1) + 'px';
 }

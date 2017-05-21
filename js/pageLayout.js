@@ -9,10 +9,10 @@ var corFonteInicial;
 
 /**/
 function changeLayoutTo(bgColor, fontColor) {
-    if(bgInicial == null){
+    if (bgInicial == null) {
         bgInicial = document.body.style.backgroundColor;
     }
-    if(corFonteInicial == null){
+    if (corFonteInicial == null) {
         corFonteInicial = document.body.style.color;
     }
     document.body.style.background = bgColor;
@@ -20,14 +20,14 @@ function changeLayoutTo(bgColor, fontColor) {
     document.body.style.color = fontColor;
 }
 
-function changeMsgTo(newMsg){
-    if(msgInicial == null){
+function changeMsgTo(newMsg) {
+    if (msgInicial == null) {
         msgInicial = document.getElementsByTagName('p')[0].innerHTML;
     }
     document.getElementById("demo").innerHTML = newMsg;
 }
 
-function resetChange(){
+function resetChange() {
     changeMsgTo(msgInicial);
     changeLayoutTo(bgInicial, corFonteInicial);
 }

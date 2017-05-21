@@ -2,7 +2,7 @@
  * Created by Lucas on 12/05/2017.
  */
 
-/*variável de escopo global*/
+/*variável de escopo global*/ /*talvez no futuro seja o caso de usar clojure pra resolver isso*/
 var msgInicial;
 var bgInicial;
 var corFonteInicial;

@@ -20,6 +20,7 @@
         <script src="js/inputManipulation.js"></script>
         <script src="js/pageLayout.js"></script>
         <script src="js/dateFunctions.js"></script>
+        <script src="js/tutoresGesto.js"> </script>
     </head>
 
     <br>
@@ -107,6 +108,13 @@
                 </p>
             </div>
 
+            <div>
+                Tutores:
+                <p id="nums">
+                    <input id="tutorPos" pattern="[1-9]{1,}" type="text" placeholder="Mostrar o nome do(a) tutor(a) da posição." value="" size="40">
+                    <input type="button" class="button" onclick="printTutorInfo('tutorPos')" value="mostrar tutor">
+                </p>
+            </div>
         </div>
 
         <br>
@@ -140,6 +148,12 @@
             <p> > Nunca instancie tipos básicos com as classes(string, int, boolean etc) através de 'new'; instancie, no entanto, com valores simples. Ex: var array = []; var str = ""; var int = 0; etc </p>
             <p> > Atribua valores default para os parâmetros caso eles sejam setados para undefinied.</p>
             <p> > Evite usar eval()</p>
+            <p> > Evite usar variáveis desnecessárias.</p>
+            <p> > dica de performance: acesse o DOM apenas uma vez. Ex: obj = document.getElementById("demo"); pois esse getElementById é lento. Faça só uma vez esse get.</p>
+            <p> > dica de performance: não faça array.length no for(a cada iteração eu teria que consultar esse método). Crie uma variável e atribua a ela: var l = array.length;</p>
+            <p> > evite usar palavras reservadas de java, js e html como nome para variáveis.</p>
+            <p> > Evite usar ECMAScript 6 ainda é parcialmente suportada pelos navegadores. Por enquanto, utilize o ECMAScript 5.</p>
+            <p> > O formato textual JSON(javascript object notation) é sintaticamente idêntico à criação de objetos javascript. Isso facilita a conversão de JSON para JS nativo.</p>
         </div>
         <div>
             <h1> Escopo em js </h1>

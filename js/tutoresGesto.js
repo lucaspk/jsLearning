@@ -30,3 +30,22 @@ function printTutorInfo(inputID){
     }
 
 }
+
+function printTutorName(){
+    var xablau = [];
+    var x = $.getJSON('./js/tutores.json', function (data){
+        xablau = data.tutores;
+        window.alert(data.tutores[0].nome);
+    });
+
+
+}
+
+function printTutorNames(){
+    $.getJSON('./js/tutores.json', function (data){
+        var xablau = data;
+        window.alert(xablau.tutores[0].nome + " " + xablau.tutores[0].sobrenome);
+    });
+    //window.alert(xablau[0].name + " " + xablau[0].sobrenome);
+
+}

@@ -20,19 +20,20 @@
         <script src="js/inputManipulation.js"></script>
         <script src="js/pageLayout.js"></script>
         <script src="js/dateFunctions.js"></script>
-        <script src="js/tutoresGesto.js"> </script>
+        <script src="js/tutoresGesto.js"></script>
+        <script src="js/TutorObj.js"></script>
     </head>
 
     <br>
         <div>
-            <ul>
-                <li><a onclick="changeLayoutTo('red','white'); changeMsgTo('bg = Red; font = White')">Layout Red/White</a></li>
-                <li><a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a></li>
-                <li><a onclick="resetChange()">Default Layout</a></li>
-                <li><a href="https://www.youtube.com/watch?v=7mJLmpuxzaQ" target="_blank">musica q tava procurando *-*</a></li>
-                <li><a onclick="isWeekend()">eh fim de semana?</a></li>
-                <li><a onclick="printNumsInRange(1,10)">imprimir de 1..10</a></li>
-                <li><a onclick="printNumsInRangeSkippingEven(1,10)">imprimir de 1..10 pulando pares</a></li>
+            <ul id="menu">
+                <li id="menuItem"><a onclick="changeLayoutTo('red','white'); changeMsgTo('bg = Red; font = White')">Layout Red/White</a></li>
+                <li id="menuItem"><a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a></li>
+                <li id="menuItem"><a onclick="resetChange()">Default Layout</a></li>
+                <li id="menuItem"><a href="https://www.youtube.com/watch?v=7mJLmpuxzaQ" target="_blank">musica q tava procurando *-*</a></li>
+                <li id="menuItem"><a onclick="isWeekend()">eh fim de semana?</a></li>
+                <li id="menuItem"><a onclick="printNumsInRange(1,10)">imprimir de 1..10</a></li>
+                <li id="menuItem"><a onclick="printNumsInRangeSkippingEven(1,10)">imprimir de 1..10 pulando pares</a></li>
             </ul>
         </div>
         <div>
@@ -114,12 +115,17 @@
                     <input id="tutorPos" pattern="[1-9]{1,}" type="text" placeholder="Mostrar o nome do(a) tutor(a) da posição." value="" size="40">
                     <input type="button" class="button" onclick="printTutorInfo('tutorPos')" value="mostrar tutor">
                     <input type="button" id="xuxa" class="button" onclick="printTutorNames()" value="mostrar tutor">
+
+
                 </p>
+                <div>
+                    <h1> Tutores </h1>
+                    <input type="button" id="zz" class="button" onclick="mostrarTutores()" value="mostrar tutor obj">
+                    <ul id="zaza"></ul>
+                </div>
             </div>
         </div>
-
         <br>
-
         <div>
             <p> To do: colocar cada categoria lado a lado e num menu bonito feito por mim com base no tympanus.net.</p>
             <p> Estudar selectors(é importante).</p>

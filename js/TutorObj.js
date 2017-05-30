@@ -6,6 +6,12 @@ function tutor(firstName, lastName, nickName){
     this.firstName = firstName;
     this.lastName = lastName;
     this.nickName = nickName;
+    this.changeFirstName = function (newFirstName) { // equivalente ao set em java.
+        this.firstName = newFirstName;
+    }
+    this.fullName = function () {
+        return this.firstName + " " + this.lastName;
+    }
 }
 
 // http://jsfiddle.net/rgthree/ccyo77ep/
@@ -36,7 +42,12 @@ function mostrarTutores(){
     document.getElementById('zz').addEventListener('click', function () {
         for (var i = 0, tutorAtual ; tutorAtual = tutores[i]; i++) {
             var liElement = document.createElement('li');
-            liElement.innerText = tutorAtual.firstName + " " + tutorAtual.lastName + " - Apelido:" + tutorAtual.nickName + ' ';
+            liElement.innerText = tutorAtual.fullName() + " - Apelido:" + tutorAtual.nickName + ' ';
+            if(tutorAtual.nickName === 'Clatara'){
+                tutorAtual.sexo = "Feminino"; // add um novo atributo ao objeto. Para deletar, basta: delete tutorAtual.sexo;
+                //também é possível add novos métodos ao objeto: tutorAtual.xablau = function () {...};
+                liElement.innerText += "- Sexo: " + tutorAtual.sexo;
+            }
             element.appendChild(liElement);
         }
     });

@@ -22,6 +22,7 @@
         <script src="js/dateFunctions.js"></script>
         <script src="js/tutoresGesto.js"></script>
         <script src="js/TutorObj.js"></script>
+        <script src="js/closures.js"></script>
     </head>
 
     <br>
@@ -123,6 +124,15 @@
                     <input type="button" id="zz" class="button" onclick="mostrarTutores()" value="mostrar tutor obj">
                     <ul id="zaza"></ul>
                 </div>
+                <div>
+                    <h1> Closures </h1>
+                    Global variable should change it's value: <h2 id="globalVarTxt">  </h2>
+                    Local variable should be constant: <h2 id="localVarTxt">  </h2>
+                    Variable related to closure should increase: <h2 id="closureTxt">  </h2>
+                    <input type="button" class="button" onclick="addVarGlobal('globalVarTxt')" value="add com var global">
+                    <input type="button" class="button" onclick="addVarLocal('localVarTxt')" value="add com var local">
+                    <input type="button" id ="closureAdd" class="button" onclick="addWithClosure('closureTxt')" value="add com closure">
+                </div>
             </div>
         </div>
         <br>
@@ -161,6 +171,10 @@
             <p> > evite usar palavras reservadas de java, js e html como nome para variáveis.</p>
             <p> > Evite usar ECMAScript 6 ainda é parcialmente suportada pelos navegadores. Por enquanto, utilize o ECMAScript 5.</p>
             <p> > O formato textual JSON(javascript object notation) é sintaticamente idêntico à criação de objetos javascript. Isso facilita a conversão de JSON para JS nativo.</p>
+            <p> > Changes to:
+                <br> >> arguments are not visible (reflected) outside the function;
+                <br> >> objects are visible (reflected) outside the function.
+            </p>
         </div>
         <div>
             <h1> Escopo em js </h1>

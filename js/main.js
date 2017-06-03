@@ -13,7 +13,16 @@ function recoverElement(id){
     document.getElementById(id).style.display = "block";
 }
 
+function hideOrShow(id) {
+   var elem = document.getElementById(id);
+   var isElemVisible = elem.style.display == "block";
+   if (isElemVisible) {
+        hideElement(id);
+   } else {
+       recoverElement(id);
+   }
 
+}
 
 
 

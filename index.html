@@ -23,6 +23,7 @@
         <script src="js/tutoresGesto.js"></script>
         <script src="js/TutorObj.js"></script>
         <script src="js/closures.js"></script>
+        <script src="js/animation.js"></script>
     </head>
 
     <br>
@@ -132,7 +133,21 @@
                     <input type="button" class="button" onclick="addVarGlobal('globalVarTxt')" value="add com var global">
                     <input type="button" class="button" onclick="addVarLocal('localVarTxt')" value="add com var local">
                     <input type="button" id ="closureAdd" class="button" onclick="addWithClosure('closureTxt')" value="add com closure">
+                    <p id="txtShow"> Showing... </p>
+                    <input type="button" class="button" onclick="hideOrShow('txtShow')" value="hide/show">
                 </div>
+
+                    <h1> Animate - Minha primeira animação *-* </h1>
+                    <p>
+                        <input type="button" class="button" onclick="moveElem('animate')" value="animate!!">
+                        <input type="button" class="button" onclick="hideOrShow('container')" value="hide/show animation!!">
+                    </p>
+                    <div id ="container">
+                        <div id ="animate"> </div>
+                    </div>
+
+
+
             </div>
         </div>
         <br>
@@ -174,6 +189,9 @@
             <p> > Changes to:
                 <br> >> arguments are not visible (reflected) outside the function;
                 <br> >> objects are visible (reflected) outside the function.
+            </p>
+            <p> > DOM - Document Object Model - é uma plataforma e uma interface de linguagem natural que permite programas e scripts
+            acessarem dinamicamente e atualizarem conteúdos, estrutura e estilo do documento.
             </p>
         </div>
         <div>

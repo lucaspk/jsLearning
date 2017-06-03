@@ -37,18 +37,18 @@ function createTutores(){
 
 
 function mostrarTutores(){
-    var element = document.getElementById("zaza");
+    var uiElem = document.getElementById("zaza");
     var tutores = createTutores();
     document.getElementById('zz').addEventListener('click', function () {
         for (var i = 0, tutorAtual ; tutorAtual = tutores[i]; i++) {
-            var liElement = document.createElement('li');
+            var liElement = document.createElement('li'); // create element = create an html element
             liElement.innerText = tutorAtual.fullName() + " - Apelido:" + tutorAtual.nickName + ' ';
             if(tutorAtual.nickName === 'Clatara'){
                 tutorAtual.sexo = "Feminino"; // add um novo atributo ao objeto. Para deletar, basta: delete tutorAtual.sexo;
                 //também é possível add novos métodos ao objeto: tutorAtual.xablau = function () {...};
                 liElement.innerText += "- Sexo: " + tutorAtual.sexo;
             }
-            element.appendChild(liElement);
+            uiElem.appendChild(liElement); // appendChild - Add an HTML element; tb existe: removeChild e replaceChild
         }
     });
 

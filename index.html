@@ -118,7 +118,6 @@
                     <input type="button" class="button" onclick="printTutorInfo('tutorPos')" value="mostrar tutor">
                     <input type="button" id="xuxa" class="button" onclick="printTutorNames()" value="mostrar tutor">
 
-
                 </p>
                 <div>
                     <h1> Tutores </h1>
@@ -142,12 +141,9 @@
                         <input type="button" class="button" onclick="moveElem('animate')" value="animate!!">
                         <input type="button" class="button" onclick="hideOrShow('container')" value="hide/show animation!!">
                     </p>
-                    <div id ="container">
+                    <div onmouseover="alertMsg('que foi, fela da gaitaaaa?!')" id ="container">
                         <div id ="animate"> </div>
                     </div>
-
-
-
             </div>
         </div>
         <br>
@@ -168,8 +164,6 @@
             <h1> Seção de alertas e recomendações </h1>
             <p> > JavaScript é Case Sensitive.</p>
             <p> > Inicializar as variáveis com valor indefinido.</p>
-            <p> > Não instancie booleans com 'new Boolean(...)', pois isso é um objeto, o que é mais lento(execução) e não pode ser comparado com == ou ===. Instancie com false ou true mesmo.</p>
-            <p> > Raciocínio análogo ao anterior vale para Strings e inteiros(criados com 'new Number(...)').</p>
             <p> > Comparar 2 objetos(x e y, digamos) x==y ou x===y sempre retornará falso.</p>
             <p> > Hoisting: posso declarar uma variável depois de usá-la, pois a declaração de variável em JS vai para o topo antes mesmo do código ser executado.
                 MAS É APENAS A DECLARAÇÃO. NÃO EXISTE HOISTING DE INICIALIZAÇÃO EM JS. </p>
@@ -177,10 +171,10 @@
             <p> > JS só tem escopo a nível de função. Exemplo: se você criar uma variável dentro do if, ela terá aquele valor mesmo fora(if não define um escopo como em outras liguagens cuja definição de escopo é por bloco, como C/C++ e Java).
             Se quisermos simular a definição de escopo de outras linguagens, podemos usar clojures para isso.</p>
             <p> > Strict Mode: não podemos usar variáveis que não foram declaradas.</p>
+            <p> > Não instancie com 'new ...(...)', pois isso é um objeto, o que é mais lento(execução) e não pode ser comparado com == ou ===.</p>
             <p> > Nunca instancie tipos básicos com as classes(string, int, boolean etc) através de 'new'; instancie, no entanto, com valores simples. Ex: var array = []; var str = ""; var int = 0; etc </p>
             <p> > Atribua valores default para os parâmetros caso eles sejam setados para undefinied.</p>
-            <p> > Evite usar eval()</p>
-            <p> > Evite usar variáveis desnecessárias.</p>
+            <p> > Evite usar eval() e variáveis desnecessárias.</p>
             <p> > dica de performance: acesse o DOM apenas uma vez. Ex: obj = document.getElementById("demo"); pois esse getElementById é lento. Faça só uma vez esse get.</p>
             <p> > dica de performance: não faça array.length no for(a cada iteração eu teria que consultar esse método). Crie uma variável e atribua a ela: var l = array.length;</p>
             <p> > evite usar palavras reservadas de java, js e html como nome para variáveis.</p>

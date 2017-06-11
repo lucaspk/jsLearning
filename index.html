@@ -38,6 +38,29 @@
                 <li id="menuItem"><a onclick="printNumsInRangeSkippingEven(1,10)">imprimir de 1..10 pulando pares</a></li>
             </ul>
         </div>
+
+        <!-- O overlay -->
+        <div id="myNav" class="overlay">
+
+            <!-- botão para fechar o overlay -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- conteúdo do Overlay -->
+            <div class="overlay-content">
+                <a onclick="changeLayoutTo('red','white'); changeMsgTo('bg = Red; font = White')">Layout Red/White</a>
+                <a onclick="changeLayoutTo('green','black'); changeMsgTo('bg = Green; font = Black')">Layout Green/Black</a>
+                <a onclick="resetChange()">Default Layout</a>
+                <a href="https://www.youtube.com/watch?v=7mJLmpuxzaQ" target="_blank">musica q tava procurando *-*</a>
+                <a onclick="isWeekend()">eh fim de semana?</a>
+                <a onclick="printNumsInRange(1,10)">imprimir de 1..10</a>
+                <a onclick="printNumsInRangeSkippingEven(1,10)">imprimir de 1..10 pulando pares</a>
+
+            </div>
+        </div>
+
+        <!-- Use any element to open/show the overlay navigation menu -->
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">Menu &#9776; </span>
+
         <div>
             <p id="demo"> Xablau </p>
             <div id="fontSizeManip">
@@ -136,7 +159,7 @@
                     <input type="button" class="button" onclick="hideOrShow('txtShow')" value="hide/show">
                 </div>
 
-                    <h1> Animate - Minha primeira animação *-* </h1>
+                    <h1> Animate - Minha primeira animação *-*: fazer aquele modal lindo </h1>
                     <p>
                         <input type="button" class="button" onclick="moveElem('animate')" value="animate!!">
                         <input type="button" class="button" onclick="hideOrShow('container')" value="hide/show animation!!">
